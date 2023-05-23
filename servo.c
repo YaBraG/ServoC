@@ -4,6 +4,7 @@
 
 int main(void)
 {
+    wiringPiSetup();
     int pin = 0;
     softPwmCreate(pin, 0, 30);
     int x;

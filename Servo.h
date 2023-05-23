@@ -68,8 +68,6 @@
 #include "mbed/ServoTimers.h"
 #elif defined(ARDUINO_ARCH_RENESAS)
 #include "renesas/ServoTimers.h"
-#else
-#error "This library only supports boards with an AVR, SAM, SAMD, NRF52 or STM32F4 processor."
 #endif
 
 #define Servo_VERSION 2 // software version of this library

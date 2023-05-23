@@ -14,15 +14,15 @@ int main(void)
     {
         for (x; x < 200; x++)
         {
-            pwmWrite(0, 150);
+            pwmWrite(0, x);
             delay(100);
-            printf("%d /n", x);
+            printf("%d \n", x);
         }
         for (x; x > 0; x--)
         {
-            pwmWrite(0, 0);
+            pwmWrite(0, x);
             delay(100);
-            printf("%d /n", x);
+            printf("%d \n", x);
         }
     }
     return 0;

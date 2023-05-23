@@ -15,11 +15,13 @@ int main(void)
         {
             softPwmWrite(pin, x);
             delay(100);
+            printf("%d \n", x);
         }
         for (x; x > 0; x--)
         {
             softPwmWrite(pin, x);
             delay(100);
+            printf("%d \n", x);
         }
     }
 }

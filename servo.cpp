@@ -1,9 +1,9 @@
 #include <stdio.h>
-// #include <wiringPi.h>
-// #include <softPwm.h>
+#include <wiringPi.h>
+#include <softPwm.h>
 
-#include <includes/wiringPi.h>
-#include <includes/softPwm.h>
+// #include <includes/wiringPi.h>
+// #include <includes/softPwm.h>
 
 #include <stdio.h>
 

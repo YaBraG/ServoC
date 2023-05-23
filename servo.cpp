@@ -7,8 +7,7 @@ int main(void)
     wiringPiSetup();
     int pin = 0;
     softPwmCreate(pin, 0, 28);
-    int y;
-    float x = map(y, 0, 28, 0, 360);
+    float x = map(x, 0, 28, 0, 360);
 
     while (1)
     {

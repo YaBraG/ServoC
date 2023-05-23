@@ -1,24 +1,21 @@
 #include <wiringPi.h>
-#include "Servo.h"
-
-Servo myservo; // create servo object to control a servo
-// twelve servo objects can be created on most boards
-
-int pos = 0; // variable to store the servo position
+#include <softServo.h>
 
 int main(void)
 {
-    myservo.attach(0); // attaches the servo on pin 9 to the servo object
+    wiringPiSetup()
+        softServoSetup(0, 1, 2, 3, 4, 5, 6, 7);
 
-    for (pos = 0; pos <= 180; pos += 1)
-    { // goes from 0 degrees to 180 degrees
-        // in steps of 1 degree
-        myservo.write(pos); // tell servo to go to position in variable 'pos'
-        delay(15);          // waits 15 ms for the servo to reach the position
-    }
-    for (pos = 180; pos >= 0; pos -= 1)
-    {                       // goes from 180 degrees to 0 degrees
-        myservo.write(pos); // tell servo to go to position in variable 'pos'
-        delay(15);          // waits 15 ms for the servo to reach the position
-    }
+    softServoWrite(0, 500);
+    /*
+        softServoWrite (1, 1000) ;
+        softServoWrite (2, 1100) ;
+        softServoWrite (3, 1200) ;
+        softServoWrite (4, 1300) ;
+        softServoWrite (5, 1400) ;
+        softServoWrite (6, 1500) ;
+        softServoWrite (7, 2200) ;
+    */
+
+    delay(10);
 }

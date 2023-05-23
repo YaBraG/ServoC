@@ -19,13 +19,13 @@ int main(void)
         for (x; x < 28; x++)
         {
             softPwmWrite(pin, mapRange(0, 28, 0, 360, x));
-            delay(10);
+            delay(700);
             printf("%d = %g \n", x, mapRange(0, 28, 0, 360, x));
         }
         for (x; x > 0; x--)
         {
             softPwmWrite(pin, mapRange(0, 28, 0, 360, x));
-            delay(10);
+            delay(700);
             printf("%d = %g \n", x, mapRange(0, 28, 0, 360, x));
         }
     }

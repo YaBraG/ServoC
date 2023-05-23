@@ -1,29 +1,31 @@
-#include <wiringPi.h>
 #include <stdio.h>
+#include <errno.h>
+#include <string.h>
 
-int main(void)
+#include <wiringPi.h>
+#include "softServo.h"
+
+int main()
 {
-    printf("Raspberry Pi wiringPi test program\n");
-    wiringPiSetupGpio();
-    pinMode(0, PWM_OUTPUT);
-    pwmSetMode(PWM_MODE_MS);
-    pwmSetRange(2000);
-    pwmSetClock(192);
-    int x;
-    while (1)
+    if (wiringPiSetup() == -1)
     {
-        for (x; x < 2000; x++)
-        {
-            pwmWrite(0, x);
-            delay(10);
-            printf("%d \n", x);
-        }
-        for (x; x > 0; x--)
-        {
-            pwmWrite(0, x);
-            delay(10);
-            printf("%d \n", x);
-        }
+        fprintf(stdout, "oops: %s\n", strerror(errno));
+        return 1;
     }
-    return 0;
+
+    softServoSetup(0, 1, 2, 3, 4, 5, 6, 7);
+
+    softServoWrite(0, 0);
+    /*
+      softServoWrite (1, 1000) ;
+      softServoWrite (2, 1100) ;
+      softServoWrite (3, 1200) ;
+      softServoWrite (4, 1300) ;
+      softServoWrite (5, 1400) ;
+      softServoWrite (6, 1500) ;
+      softServoWrite (7, 2200) ;
+    */
+
+    for (;;)
+        delay(10);
 }

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <wiringPi.h>
-#include <softPWM.h>
+#include <softPwm.h>
 
 int main(void)
 {

@@ -12,16 +12,16 @@ int main(void)
     int x;
     while (1)
     {
-        for (x; x < 200; x++)
+        for (x; x < 2000; x++)
         {
             pwmWrite(0, x);
-            delay(100);
+            delay(10);
             printf("%d \n", x);
         }
         for (x; x > 0; x--)
         {
             pwmWrite(0, x);
-            delay(100);
+            delay(10);
             printf("%d \n", x);
         }
     }

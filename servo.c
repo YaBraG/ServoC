@@ -16,15 +16,13 @@ int main(void)
         {
             pwmWrite(0, 150);
             delay(100);
-            printf(x);
-            printf("/n");
+            printf("%d /n", x);
         }
         for (x; x > 0; x--)
         {
             pwmWrite(0, 0);
             delay(100);
-            printf(x);
-            printf("/n");
+            printf("%d /n", x);
         }
     }
     return 0;

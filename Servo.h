@@ -43,33 +43,6 @@
 
 #include <inttypes.h>
 
-/*
- * Defines for 16 bit timers used with Servo library
- *
- * If _useTimerX is defined then TimerX is a 16 bit timer on the current board
- * timer16_Sequence_t enumerates the sequence that the timers should be allocated
- * _Nbr_16timers indicates how many 16 bit timers are available.
- */
-
-// Architecture specific include
-#if defined(ARDUINO_ARCH_AVR)
-#include "avr/ServoTimers.h"
-#elif defined(ARDUINO_ARCH_SAM)
-#include "sam/ServoTimers.h"
-#elif defined(ARDUINO_ARCH_SAMD)
-#include "samd/ServoTimers.h"
-#elif defined(ARDUINO_ARCH_STM32F4)
-#include "stm32f4/ServoTimers.h"
-#elif defined(ARDUINO_ARCH_NRF52)
-#include "nrf52/ServoTimers.h"
-#elif defined(ARDUINO_ARCH_MEGAAVR)
-#include "megaavr/ServoTimers.h"
-#elif defined(ARDUINO_ARCH_MBED)
-#include "mbed/ServoTimers.h"
-#elif defined(ARDUINO_ARCH_RENESAS)
-#include "renesas/ServoTimers.h"
-#endif
-
 #define Servo_VERSION 2 // software version of this library
 
 #define MIN_PULSE_WIDTH 544      // the shortest pulse sent to a servo

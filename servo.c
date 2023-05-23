@@ -6,12 +6,13 @@ int main(void)
 {
     wiringPiSetup();
     int pin = 0;
-    softPwmCreate(pin, 0, 180);
-    int x;
+    softPwmCreate(pin, 0, 28);
+    int y;
+    float x = map(y, 0 20, 0, 360);
 
     while (1)
     {
-        for (x; x < 180; x++)
+        for (x; x < 90; x++)
         {
             softPwmWrite(pin, x);
             delay(100);

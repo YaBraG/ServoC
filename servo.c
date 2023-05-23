@@ -1,5 +1,5 @@
-#include <drogon/wiringpi/wiringPi/wiringPi.h>
-#include <drogon/wiringpi/wiringPi/softServo.h>
+#include <wiringPi.h>
+#include <softServo.h>
 
 int main()
 {
